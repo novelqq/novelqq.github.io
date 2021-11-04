@@ -1,77 +1,85 @@
+html {
+    font-size: 14px;
+    font-family: "Comic Sans";
+    background-color: lightgrey;
+    background-image: url("public/bgangel.jpg");
+}
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
-  }
-  
-  h1 {
-    color: #444444;
-    margin-left: 20px;
-  }
-  h2, h3, h4, h5, h6 {
-    color: #444444;
-  }
-  ul {
+    padding-top: 50px;
+}
+.navbar {
+    background-color: #223138;
+    position: fixed;
+    margin-left: 0;
+    top: 0;
+    height: 56px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
     margin: 0;
-  }
-  
-  .bg-steel {
-    background-color: #1961e7;
-  }
-  
-  .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
-  }
-  
-  .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-  }
-  
-  .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
-  }
-  
-  .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-  }
-  
-  .article-title {
-    color: #444444;
-  }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
-  .article-content {
-    white-space: pre-line;
-  }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
+    padding: 0;
+}
+.navbar ul li {
+    float: left;
+    
+}
+.navbar ul li h1 {
+    display: block;
+    background-color: #223138;
+    color: white;
+    padding: 0 25px 20px;
+}
+.navbar ul li img {
+    padding: 18px 15px 20px;
+
+}
+.contentgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.contentgrid p {
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.contentgrid img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.textbookitem {
+    background-color: white;
+    margin: 5px;
+}
+.seemore {
+    opacity: 0;
+    padding: 5px;
+    margin-left: 10px;
+    transition: opacity .5s;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+}
+.textbookitem:focus, .textbookitem:hover .seemore {
+    opacity: 100%;
+}
+.textbookitem:focus, .textbookitem:hover {
+    box-shadow: 0 4px 8px 0 rgba(19, 19, 19, 0.2), 0 6px 20px 0 rgba(43, 42, 42, 0.19);
+}
+
+@media only screen and (max-width: 770px) {
+    .contentgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+}
