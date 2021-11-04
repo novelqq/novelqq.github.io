@@ -9,6 +9,7 @@ body {
 }
 .navbar {
     background-color: #223138;
+    background-image: url("public/img/download.gif");
     position: fixed;
     margin-left: 0;
     top: 0;
@@ -29,13 +30,29 @@ body {
 }
 .navbar ul li h1 {
     display: block;
-    background-color: #223138;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0 25px 20px;
 }
 .navbar ul li img {
     padding: 18px 15px 20px;
 
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+item {
+    flex: 1 200px;
+    align-items: center;
+    justify-content: center;
+}
+item img {
+    display:flex;
+    width: 400px;
+}
+item .seemore {
+    display:flex;
 }
 .contentgrid {
     display: grid;
@@ -43,7 +60,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 10px;
 }
-.contentgrid p {
+/* .contentgrid p {
     text-align: justify;
     font-weight: bold;
     padding-left: 10px;
@@ -53,26 +70,26 @@ body {
     display: block;
     margin: 0 auto;
     width: 100%;
-}
+} */
 .textbookitem {
     background-color: white;
     margin: 5px;
 }
 .seemore {
-    opacity: 0;
+    opacity: 100;
     padding: 5px;
     margin-left: 10px;
     transition: opacity .5s;
     color: white;
     font-weight: bold;
-    background-color: orange;
+    background-color: rgb(0, 60, 255);
     border: none;
     border-radius: 5px;
 }
-.textbookitem:focus, .textbookitem:hover .seemore {
+.item:focus, .item:hover .seemore {
     opacity: 100%;
 }
-.textbookitem:focus, .textbookitem:hover {
+.item:focus, .item:hover {
     box-shadow: 0 4px 8px 0 rgba(19, 19, 19, 0.2), 0 6px 20px 0 rgba(43, 42, 42, 0.19);
 }
 
