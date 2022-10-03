@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/novelqq/novelqq.github.io#readme",
   "dependencies": {
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "vue": "^3.2.40"
   }
 }
