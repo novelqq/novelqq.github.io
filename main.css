@@ -1,0 +1,222 @@
+:root {
+	color-scheme: dark;
+
+	--primary: #83C092;
+	--primary-stronger: #D3C6AA;
+
+	--secondary: #2D353B;
+	--secondary-stronger: #475258;
+
+	--font: 'Iosevka';
+
+	--split-left: 30ch;
+	--split-right: 48ch; /* golden */
+}
+@font-face {
+	font-family: 'Iosevka Mono';
+
+	font-weight: 400;
+	font-style: normal;
+}
+body {
+	margin: 0;
+	font-family: var(--font);
+	font-size: 1.05rem;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+#content {
+	flex-grow: 1;
+}
+/* ==== HEADER ==== */
+.header { /* for posts */
+	padding-bottom: 0 !important;
+}
+.logo {
+    background-image:
+    linear-gradient(to bottom, rgba(45, 53, 59, 0.8), rgba(45, 53, 59, 1)) ,url("public/img/logo-bg.jpeg");
+    opacity: 100%;
+	display: flex;
+	height: 100vh;
+}
+.logo pre {
+	margin: auto;
+	font-family: var(--font);
+	font-size: 2.2vw;
+    text-shadow: 13px 7px #484848;
+    animation: 10s infinite alternate slidein;
+}
+@keyframes textmove {
+          from {text-shadow: 1px 1px #484848;}
+          50%{text-shadow: -4px -2px #484848;}
+          80%{text-shadow: 7px -4px #484848;}
+          to {text-shadow: 4px 7px #484848;}
+}
+@keyframes slidein {
+  0% {
+    transform: translate(4px, 0) skew(0deg);
+    text-shadow: 10px -5px #484848;
+  }
+
+  50% {
+    transform: translate(0,0) skew(5deg);
+    text-shadow: 0px -0px #484848;
+  }
+
+  100% {
+    transform: translate(-4px, 0) skew(10deg);
+    text-shadow: -5px 10px #484848;
+  }
+}
+/* ==== GENERAL ==== */
+.flex {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.flexouter {
+	padding-bottom: 1em;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    background: var(--secondary);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* ==== CONTENT ==== */
+.split {
+	flex-direction: row;
+	justify-content: center;
+	align-items: normal;
+	justify-items: center;
+}
+.split > * {
+	flex: 1;
+	padding: 1.5em 1em 0em;
+}
+#posts {
+	min-width: var(--split-left);
+	flex: 1;
+}
+#about {
+	min-width: var(--split-right);
+	flex: 2;
+}
+.split h4 {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.middle {
+	max-width: 100ch;
+}
+
+/* ==== FOOTER ==== */
+.links {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.links > * {
+	margin: 0.3em;
+}
+
+/* ==== COLOR ==== */
+.dark {
+	background-color: var(--secondary);
+	color: var(--primary);
+}
+
+.light {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+.light a:link { color: var(--secondary-stronger); }
+.light a:visited { color: var(--secondary); }
+
+.dark a:link { color: var(--primary-stronger); }
+.dark a:visited { color: var(--primary); }}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+item {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 10px;
+    border-radius: 1rem;
+    display: inline-block;
+    position:relative;
+    
+}
+item img {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+item .instagram {
+    position: absolute;
+    width: 40px;
+    bottom: 25px;
+    right: 25px;
+    margin: 10px;
+    opacity: 50%;
+    padding: 5px;
+    margin-left: 10px;
+    transition: opacity .5s;
+}
+item .flickr {
+    position: absolute;
+    width: 40px;
+    bottom: 25px;
+    right: 80px;
+    margin: 10px;
+    opacity: 50%;
+    padding: 5px;
+    margin-left: 10px;
+    transition: opacity .5s;
+}
+.contentgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+/* .contentgrid p {
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.contentgrid img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+} */
+.textbookitem {
+    background-color: white;
+    margin: 5px;
+}
+
+.item:hover {
+    opacity: 100%;
+}
+.flickr:hover, .instagram:hover {
+    opacity: 100%;
+}
+.item:focus, .item:hover {
+    box-shadow: 0 4px 8px 0 rgba(19, 19, 19, 0.2), 0 6px 20px 0 rgba(43, 42, 42, 0.19);
+}
+
