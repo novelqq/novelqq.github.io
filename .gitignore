@@ -9,5 +9,4 @@ package-lock.json
 coverage/
 .tmp*
 .vscode
-/public
 /build/env
