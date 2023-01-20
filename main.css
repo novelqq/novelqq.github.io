@@ -152,19 +152,22 @@ section {
     justify-content: center;
 }
 
-item {
+.post {
     width:80%;
     margin-left:auto;
     margin-right:auto;
     padding: 10px;
     border-radius: 1rem;
-    display: inline-block;
+    flex-direction: column;
     position:relative;
     
 }
-item img {
+.post a:link { color: var(--secondary-stronger); }
+
+.post a:visited { color: var(--secondary); }
+
+.post img {
     max-width: 100%;
-    border-radius: 1rem;
 }
 item .instagram {
     position: absolute;

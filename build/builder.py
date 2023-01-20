@@ -8,32 +8,53 @@ def get_posts():
     posts = glob(posts_path.format('*'))
     blog_posts = []
     for i in range(len(posts)):
+        post = {}
         file = open(posts_path.format(i), 'r')
-        data = file.read().strip()
-        md = markdown.Markdown(extensions=['meta'])
-        html = md.convert(data)
-        print(md.Meta)
-        blog_posts += f"<li><a href=\"posts/{i}\">{title}</li>\n"
-        print(blog_posts)
+        post["title"] = file.readline().strip()
+        post["date"] = file.readline().strip()
+        post["tags"] = file.readline().strip().split(" ") 
+        post["content"] = markdown.markdown(file.read())
+        post["link"] = post["title"].replace(" ", "_")
+        blog_posts.append(post)
         file.close()
     return blog_posts
 
 
-def write_html(blog_posts_html):
-    with open("template.html", "r") as template:
-        output = template.read().replace('<!-- CONTENT -->', blog_posts_html )
+def write_index(new_posts):
+    with open("index_template.html", "r") as template:
+        output = template.read().replace('<!-- NEWPOSTS -->', new_posts)
         o = open("../index.html", "w")
         o.write(output)
         o.close()
-        return
 
-def create_index():
-    pass
+def write_blog(blog_posts):
+    with open("posts_template.html", "r") as template:
+        output = template.read().replace('<!-- POSTS -->', blog_posts)
+        o = open("../posts.html", "w")
+        o.write(output)
+        o.close()
+def html_format(blog_posts):
+    html = '''<div class="flex light">'''
+    for i in range(len(blog_posts)-1 , -1, -1):
+        post = blog_posts[i]
+        html += f'<div class="post" id="{post["link"]}"> {post["content"]} </div>'
 
-def create_post_pages():
-    pass
+    html += '\n</div>'
+    
+    return html
+def recent_posts_html(blog_posts):
+    html = "<ul>"
+    posts_found = 0
+    while(len(blog_posts) > 0 and posts_found < 5):
+        post = blog_posts.pop()
+        html += f'<li><a href="posts.html#{post["link"]}">{post["title"]}</li>'
+    html += "</ul>"
+    return html
 
-def 
 if __name__ == "__main__":
-    blog_posts_html = get_posts()
-    write_html(blog_posts_html)
+    blog_posts = get_posts()
+    blog_posts_html = html_format(blog_posts)
+    write_blog(blog_posts_html)
+    recent_posts = recent_posts_html(blog_posts)
+    write_index(recent_posts)
+
