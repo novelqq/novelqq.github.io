@@ -47,7 +47,7 @@ def recent_posts_html(blog_posts):
     posts_found = 0
     while(len(blog_posts) > 0 and posts_found < 5):
         post = blog_posts.pop()
-        html += f'<li><a href="posts.html#{post["link"]}">{post["title"]}</li>'
+        html += f'<li><a href="posts.html#{post["link"]}">{post["title"]}</a></li>'
     html += "</ul>"
     return html
 
