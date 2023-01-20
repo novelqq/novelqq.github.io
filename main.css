@@ -14,7 +14,7 @@
 }
 @font-face {
 	font-family: 'Iosevka';
-    src: url('public/fonts/Iosevka Nerd Font Complete.ttf') format('truetype')
+    src: url('public/fonts/Iosevka Nerd Font Complete.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
 }
