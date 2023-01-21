@@ -144,6 +144,7 @@ body {
 .dark a:link { color: var(--primary-stronger); }
 .dark a:visited { color: var(--primary); }}
 
+/* ==== POSTS ==== */
 section {
     display: flex;
     flex-wrap: wrap;
@@ -151,6 +152,9 @@ section {
     justify-content: center;
 }
 
+#posts ul {
+    padding: 0;
+}
 .post {
     width:80%;
     margin-left:auto;
