@@ -9,8 +9,8 @@
 
 	--font: 'Iosevka';
 
-	--split-left: 30ch;
-	--split-right: 48ch; /* golden */
+	--split-left: 50vw;
+	--split-right: 50vw;
 }
 @font-face {
 	font-family: 'Iosevka';
@@ -106,6 +106,7 @@ body {
 	flex: 1;
 }
 #about {
+	min-width: var(--split-right);
 	flex: 2;
 }
 .split h4 {
