@@ -9,8 +9,8 @@
 
 	--font: 'Iosevka';
 
-	--split-left: 50%;
-	--split-right: 50%;
+	--split-left: 30ch;
+	--split-right: 46ch;
 }
 @font-face {
 	font-family: 'Iosevka';
@@ -102,6 +102,7 @@ body {
 	padding: 1.5em 1em 0em;
 }
 #posts {
+    min-width: var(--split-left);
 	flex: 1;
 }
 #about {
@@ -226,3 +227,11 @@ item .flickr {
     box-shadow: 0 4px 8px 0 rgba(19, 19, 19, 0.2), 0 6px 20px 0 rgba(43, 42, 42, 0.19);
 }
 
+@media only screen and (max-width: 770px) {
+    #about {
+        min-width: 50%;
+    }
+    #posts {
+        min-width: 50%;
+    }
+}
