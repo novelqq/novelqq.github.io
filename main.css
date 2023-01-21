@@ -9,8 +9,8 @@
 
 	--font: 'Iosevka';
 
-	--split-left: 50vw;
-	--split-right: 50vw;
+	--split-left: 50%;
+	--split-right: 50%;
 }
 @font-face {
 	font-family: 'Iosevka';
@@ -102,7 +102,6 @@ body {
 	padding: 1.5em 1em 0em;
 }
 #posts {
-	min-width: var(--split-left);
 	flex: 1;
 }
 #about {
