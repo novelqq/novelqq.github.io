@@ -106,7 +106,6 @@ body {
 	flex: 1;
 }
 #about {
-	min-width: var(--split-right);
 	flex: 2;
 }
 .split h4 {
