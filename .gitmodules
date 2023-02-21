@@ -1,0 +1,3 @@
+[submodule "techniqueviewer"]
+	path = techniqueviewer
+	url = git@github.com:novelqq/techniqueviewer.git
