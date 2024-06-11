@@ -10,3 +10,5 @@ coverage/
 .tmp*
 .vscode
 /build/env
+/build/secret.txt
+__pycache__/
