@@ -17,6 +17,7 @@ def get_posts():
         file = open(posts_path.format(i), 'r')
         post["title"] = file.readline().strip()
         post["date"] = file.readline().strip()
+        post["thumb"] = file.readline().strip()
         post["tags"] = file.readline().strip().split(" ")
         post["content"] = markdown.markdown(file.read())
         post["link"] = post["title"].replace(" ", "_")
@@ -61,7 +62,7 @@ def write_blogs(blog_posts):
             next_post = blog_posts[i+1]["link"]+'.html'
         
         with open("posts_template.html", "r") as template:
-            output = template.read().replace('<!-- POSTS -->', html_format(post)).replace('<!-- NEXT -->', next_post).replace('<!-- PREV -->', prev_post)
+            output = template.read().replace('<!-- POSTS -->', html_format(post)).replace('<!-- NEXT -->', next_post).replace('<!-- PREV -->', prev_post).replace('<!-- METATITLE -->', post["title"]).replace('<!-- METAIMG -->', post["thumb"])
             o = open(f'../posts/{post["title"].replace(" ","_")}.html', 'w')
             o.write(output)
             o.close()
