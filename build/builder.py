@@ -56,9 +56,9 @@ def write_blogs(blog_posts):
         next_post = "../posts.html"
         prev_post = "../posts.html"
         if i > 0:
-            next_post = blog_posts[i-1]["link"]+'.html'
+            prev_post = blog_posts[i-1]["link"]+'.html'
         if i < len(blog_posts) - 1:
-            prev_post = blog_posts[i+1]["link"]+'.html'
+            next_post = blog_posts[i+1]["link"]+'.html'
         
         with open("posts_template.html", "r") as template:
             output = template.read().replace('<!-- POSTS -->', html_format(post)).replace('<!-- NEXT -->', next_post).replace('<!-- PREV -->', prev_post)
