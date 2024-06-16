@@ -173,6 +173,10 @@ body {
 	flex: 1;
 }
 
+#models {
+	width: 50vw;
+	height: 50vh;
+}
 #about {
 	min-width: var(--split-right);
 	flex: 2;
