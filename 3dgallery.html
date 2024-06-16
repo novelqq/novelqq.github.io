@@ -37,7 +37,7 @@
 			</nav>
 		</div>
 		<div class="flex dark">
-			<div class="middle flex flexouter split">
+			<div class="flex light">
 				<div id="posts">
 					<nav class="navbar"> 
 						<a href="<!-- NEXT -->">&lt;&lt; Next</a>
@@ -55,6 +55,17 @@
                               <img src="ar_hand_prompt.png">
                           </div>
                         </model-viewer>  
+                        <model-viewer src="/public/models/lego-material.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="32.5deg 75.66deg 0.3524m" field-of-view="30deg">
+                            <div class="progress-bar hide" slot="progress-bar">
+                                <div class="update-bar"></div>
+                            </div>
+                            <button slot="ar-button"      id="ar-button">
+                                View in your space
+                            </button>
+                            <div id="ar-prompt">
+                                <img src="ar_hand_prompt.png">
+                            </div>
+                          </model-viewer>  
                         <script src="script.js"></script>
                         <!-- Loads <model-viewer> for browsers: -->
                         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
