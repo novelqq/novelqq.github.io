@@ -174,8 +174,9 @@ body {
 }
 
 #models {
-	width: 50vw;
-	height: 50vh;
+	width: 100vw;
+	height: 75vh;
+	max-width: 1000px;
 }
 #about {
 	min-width: var(--split-right);
