@@ -49,7 +49,7 @@ body {
 }
 
 .gallery-li {
-	flex-grow: 1;
+	flex-grow: 0.1;
 }
 
 .gallery-img {
