@@ -5,7 +5,8 @@ import requests
 from glob import glob
 with open("secret.txt", "r") as f:
     api_key = f.read().rstrip()
-api_url = "https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+api_key+"&photoset_id=72177720317830969&user_id=49734374%40N07&extras=url_m&format=json&nojsoncallback=1"
+api_url = "https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+api_key + \
+    "&photoset_id=72177720317830969&user_id=49734374%40N07&extras=url_m&format=json&nojsoncallback=1"
 
 
 def get_posts():
@@ -49,7 +50,7 @@ def format_list(blog_posts):
 
     html += '</ul></div>'
     return html
-    
+
 
 def write_blogs(blog_posts):
     for i in range(len(blog_posts)):
@@ -60,9 +61,10 @@ def write_blogs(blog_posts):
             prev_post = blog_posts[i-1]["link"]+'.html'
         if i < len(blog_posts) - 1:
             next_post = blog_posts[i+1]["link"]+'.html'
-        
+
         with open("posts_template.html", "r") as template:
-            output = template.read().replace('<!-- POSTS -->', html_format(post)).replace('<!-- NEXT -->', next_post).replace('<!-- PREV -->', prev_post).replace('<!-- METATITLE -->', post["title"]).replace('<!-- METAIMG -->', post["thumb"])
+            output = template.read().replace('<!-- POSTS -->', html_format(post)).replace('<!-- NEXT -->', next_post).replace('<!-- PREV -->',
+                                                                                                                              prev_post).replace('<!-- METATITLE -->', post["title"]).replace('<!-- METAIMG -->', post["thumb"])
             o = open(f'../posts/{post["title"].replace(" ","_")}.html', 'w')
             o.write(output)
             o.close()
@@ -108,6 +110,14 @@ def make_gallery():
         html += f'<li class="gallery-li"><a href="{photo["url"]}"><img class="gallery-img" src="{photo["img"]}" /></a></li>'
     html += "</ul>"
     return html
+
+
+# def make_3d_gallery():
+# from os import listdir
+#   from os.path import isfile, join
+#   models = [f for f in listdir("../public/models/")
+#             if isfile(join("../public/models/", f))]
+#   for model in models:
 
 
 if __name__ == "__main__":
