@@ -35,7 +35,7 @@
     position: absolute;
     z-index: 3;
     font-family: "Okoto";
-    font-size: 4rem;
+    font-size: 5vw;
     color: #823038;
     margin-left: auto;
     margin-right: auto;
@@ -43,6 +43,12 @@
     right: 0;
     text-align: center;
     margin-top: 40vh;
+}
+
+@media screen and (min-width: 500px) {
+    .title {
+        font-size: 3vw;
+    }
 }
 
 .tape {
