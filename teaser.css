@@ -111,3 +111,8 @@
         transform: translate(calc(-50% - 0.5rem));
     }
 }
+
+audio {
+    position: absolute;
+    z-index: 4;
+}
