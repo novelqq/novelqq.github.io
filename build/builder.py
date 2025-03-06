@@ -10,8 +10,8 @@ api_url = "https://www.flickr.com/services/rest/?method=flickr.photosets.getPhot
 
 
 def get_posts():
-    posts_path = 'posts/{}.md'
-    posts = glob(posts_path.format('*'))
+    posts_path = 'posts/{:02}.md'
+    posts = glob(posts_path.format('**'))
     blog_posts = []
     for i in range(len(posts)):
         post = {}

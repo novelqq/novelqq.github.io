@@ -9,6 +9,6 @@ package-lock.json
 coverage/
 .tmp*
 .vscode
-/build/env
+/build/.venv
 /build/secret.txt
 __pycache__/
