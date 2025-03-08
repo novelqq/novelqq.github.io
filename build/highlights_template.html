@@ -2,52 +2,80 @@
 <html lang="en">
 
 <head>
-  <title>Ryan's Blog</title>
-  <meta charset="utf-8">
-  <meta property="og:title" contents="novelqq.github.io">
-  <meta property="og:type" contents="website">
-  <meta property="og:image" contents="https://github.com/novelqq/novelqq.github.io/raw/master/public/img/ryanlogo.png">
-  <meta property="og:description" contents="Ryan's Site">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.jpg" type="image/jpg">
-  <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Ryan's Blog</title>
+    <meta charset="utf-8">
+    <meta property="og:title" contents="novelqq.github.io">
+    <meta property="og:type" contents="website">
+    <meta property="og:image"
+        contents="https://github.com/novelqq/novelqq.github.io/raw/master/public/img/ryanlogo.png">
+    <meta property="og:description" contents="Ryan's Site">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
 <body>
 
-<div class="container">
-		<div class="logo-small dark">
-			<pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
 |    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
 |   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
 |   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
 |    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
 |   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
 |___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
-		</div>
-  <div class="container">
-    <div class="navbar dark">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="posts.html">Blog</a>
-        <a href="highlights.html">Gallery</a>
-      </nav>
-    </div>
-    <div class="flex dark">
-      <div class=" flex light">
-        <!-- GALLERY -->
-      </div>
-    </div>
-  </div>
-  <div class="flex flexouter dark">
-    <h4>Links</h4>
-    <div class="links">
-			<a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
-			<a href="https://github.com/novelqq">Github</a>
-			<a href="https://instagram.com/fuzze.builds/">Instagram</a>
-			<a href="https://x.com/smilingmuffin/">Twitter</a>
-		</div>
-  </div>
+        </div>
+        <div class="container">
+            <div class="navbar dark">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="posts.html">Blog</a>
+                    <a href="highlights.html">Gallery</a>
+                </nav>
+            </div>
+            <div class="flex dark">
+                <div class=" flex light">
+                    <!-- GALLERY -->
+                </div>
+            </div>
+        </div>
+        <div v-if="modalVisible" class="modal" @click="closeModal">
+            <img :src="modalImage" alt="Full Image" class="modal-content" />
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+
+        <script>
+            // Vue.js app
+            new Vue({
+                el: '#app',
+                data: {
+                    modalVisible: false,
+                    modalImage: ''
+                },
+                methods: {
+                    // Open the modal and set the image source
+                    openModal(imageUrl) {
+                        this.modalImage = imageUrl;
+                        this.modalVisible = true;
+                    },
+                    // Close the modal
+                    closeModal() {
+                        this.modalVisible = false;
+                        this.modalImage = '';
+                    }
+                }
+            });
+        </script>
 </body>
 
 </html>

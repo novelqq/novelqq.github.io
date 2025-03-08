@@ -2,52 +2,80 @@
 <html lang="en">
 
 <head>
-  <title>Ryan's Blog</title>
-  <meta charset="utf-8">
-  <meta property="og:title" contents="novelqq.github.io">
-  <meta property="og:type" contents="website">
-  <meta property="og:image" contents="https://github.com/novelqq/novelqq.github.io/raw/master/public/img/ryanlogo.png">
-  <meta property="og:description" contents="Ryan's Site">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.jpg" type="image/jpg">
-  <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Ryan's Blog</title>
+    <meta charset="utf-8">
+    <meta property="og:title" contents="novelqq.github.io">
+    <meta property="og:type" contents="website">
+    <meta property="og:image"
+        contents="https://github.com/novelqq/novelqq.github.io/raw/master/public/img/ryanlogo.png">
+    <meta property="og:description" contents="Ryan's Site">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
 <body>
 
-<div class="container">
-		<div class="logo-small dark">
-			<pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
 |    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
 |   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
 |   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
 |    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
 |   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
 |___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
-		</div>
-  <div class="container">
-    <div class="navbar dark">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="posts.html">Blog</a>
-        <a href="highlights.html">Gallery</a>
-      </nav>
-    </div>
-    <div class="flex dark">
-      <div class=" flex light">
-        <ul class="image-gallery"><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/54177497560"><img class="gallery-img" src="https://live.staticflickr.com/65535/54177497560_06301619e0.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53787532474"><img class="gallery-img" src="https://live.staticflickr.com/65535/53787532474_f10583bac4.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/52954224263"><img class="gallery-img" src="https://live.staticflickr.com/65535/52954224263_f8279ebc38.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53055279022"><img class="gallery-img" src="https://live.staticflickr.com/65535/53055279022_291a6daacc.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53348367432"><img class="gallery-img" src="https://live.staticflickr.com/65535/53348367432_309221419c.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/52989751175"><img class="gallery-img" src="https://live.staticflickr.com/65535/52989751175_d4d0a9c17b.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51257163356"><img class="gallery-img" src="https://live.staticflickr.com/65535/51257163356_a70270b69c.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51862622666"><img class="gallery-img" src="https://live.staticflickr.com/65535/51862622666_8358f2d0e6.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/52780205553"><img class="gallery-img" src="https://live.staticflickr.com/65535/52780205553_519c8f925e.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/52118724547"><img class="gallery-img" src="https://live.staticflickr.com/65535/52118724547_7b45a85ff6.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/52668520361"><img class="gallery-img" src="https://live.staticflickr.com/65535/52668520361_978203c47a.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51295371506"><img class="gallery-img" src="https://live.staticflickr.com/65535/51295371506_c68fea5381.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53694853741"><img class="gallery-img" src="https://live.staticflickr.com/65535/53694853741_e3650d1df2.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51751216673"><img class="gallery-img" src="https://live.staticflickr.com/65535/51751216673_d0d92c1c1d.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53024849812"><img class="gallery-img" src="https://live.staticflickr.com/65535/53024849812_6aa9c68ebf.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53700603688"><img class="gallery-img" src="https://live.staticflickr.com/65535/53700603688_d6d9a657c5.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/53728550421"><img class="gallery-img" src="https://live.staticflickr.com/65535/53728550421_88d344f636.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51324818585"><img class="gallery-img" src="https://live.staticflickr.com/65535/51324818585_e8d5a17ced.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51265593099"><img class="gallery-img" src="https://live.staticflickr.com/65535/51265593099_6060008eda.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51198626509"><img class="gallery-img" src="https://live.staticflickr.com/65535/51198626509_157febba16.jpg" /></a></li><li class="gallery-li"><a href="https://flickr.com/photos/49734374@N07/51216809021"><img class="gallery-img" src="https://live.staticflickr.com/65535/51216809021_967a61cbe1.jpg" /></a></li></ul>
-      </div>
-    </div>
-  </div>
-  <div class="flex flexouter dark">
-    <h4>Links</h4>
-    <div class="links">
-			<a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
-			<a href="https://github.com/novelqq">Github</a>
-			<a href="https://instagram.com/fuzze.builds/">Instagram</a>
-			<a href="https://x.com/smilingmuffin/">Twitter</a>
-		</div>
-  </div>
+        </div>
+        <div class="container">
+            <div class="navbar dark">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="posts.html">Blog</a>
+                    <a href="highlights.html">Gallery</a>
+                </nav>
+            </div>
+            <div class="flex dark">
+                <div class=" flex light">
+                    <ul class="image-gallery"><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/54177497560_b529fdc86f_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/54177497560_06301619e0.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53787532474_5a550d438e_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53787532474_f10583bac4.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/52954224263_1049d245a1_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/52954224263_f8279ebc38.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53055279022_1a633fdb71_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53055279022_291a6daacc.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53348367432_9648bbbcf1_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53348367432_309221419c.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/52989751175_0cb2142448_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/52989751175_d4d0a9c17b.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51257163356_91cf72760d_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51257163356_a70270b69c.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51862622666_4ec5d56cf5_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51862622666_8358f2d0e6.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/52780205553_0c8ef14239_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/52780205553_519c8f925e.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/52118724547_63f11764ac_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/52118724547_7b45a85ff6.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/52668520361_eb0ede1bdb_o.jpg')" class="gallery-img" src="https://live.staticflickr.com/65535/52668520361_978203c47a.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51295371506_bdc4a15479_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51295371506_c68fea5381.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53694853741_e3e75118f0_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53694853741_e3650d1df2.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51751216673_0e7a80312e_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51751216673_d0d92c1c1d.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53024849812_1f7edf6da0_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53024849812_6aa9c68ebf.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53700603688_17ca09ff40_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53700603688_d6d9a657c5.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/53728550421_a8d76eb7a6_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/53728550421_88d344f636.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51324818585_0bf14247f9_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51324818585_e8d5a17ced.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51265593099_9bd8510fcb_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51265593099_6060008eda.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51198626509_34f625f4d8_o.jpg')" class="gallery-img" src="https://live.staticflickr.com/65535/51198626509_157febba16.jpg" /></a></li><li class="gallery-li"><img @click="openModal('https://live.staticflickr.com/65535/51216809021_033f7a721e_o.png')" class="gallery-img" src="https://live.staticflickr.com/65535/51216809021_967a61cbe1.jpg" /></a></li></ul>
+                </div>
+            </div>
+        </div>
+        <div v-if="modalVisible" class="modal" @click="closeModal">
+            <img :src="modalImage" alt="Full Image" class="modal-content" />
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+
+        <script>
+            // Vue.js app
+            new Vue({
+                el: '#app',
+                data: {
+                    modalVisible: false,
+                    modalImage: ''
+                },
+                methods: {
+                    // Open the modal and set the image source
+                    openModal(imageUrl) {
+                        this.modalImage = imageUrl;
+                        this.modalVisible = true;
+                    },
+                    // Close the modal
+                    closeModal() {
+                        this.modalVisible = false;
+                        this.modalImage = '';
+                    }
+                }
+            });
+        </script>
 </body>
 
 </html>

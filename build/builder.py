@@ -1,12 +1,12 @@
 import markdown
 import requests
-
+import re
 
 from glob import glob
 with open("secret.txt", "r") as f:
     api_key = f.read().rstrip()
 api_url = "https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+api_key + \
-    "&photoset_id=72177720317830969&user_id=49734374%40N07&extras=url_m&format=json&nojsoncallback=1"
+    "&photoset_id=72177720317830969&user_id=49734374%40N07&extras=url_m,url_o&format=json&nojsoncallback=1"
 
 
 def get_posts():
@@ -78,10 +78,28 @@ def write_highlights(gallery):
         o.close()
 
 
+def add_click_to_images(html_string):
+    img_pattern = r'(<img[^>]+src=["\']([^"\']+)["\'][^>]*>)'
+
+    def modify_img_tag(match):
+        img_tag = match.group(1)
+        src = match.group(2)
+
+        modified_img_tag = img_tag.replace(
+            f'src="{src}"', f'src="{src}" @click="openModal(\'{src}\')"')
+
+        return modified_img_tag
+
+    modified_html = re.sub(img_pattern, modify_img_tag, html_string)
+
+    return modified_html
+
+
 def html_format(post):
     html = '''<div class="flex light">'''
     html += f'<div class="post" id="{post["link"]}"> {post["content"]} </div>'
     html += '\n</div>'
+    html = add_click_to_images(html)
     return html
 
 
@@ -102,12 +120,13 @@ def make_gallery():
     for photo in response["photoset"]["photo"]:
         new_photo = {
             "url":  "https://flickr.com/photos/49734374@N07/" + photo["id"],
-            "img": photo["url_m"]
+            "thumb": photo["url_m"],
+            "img": photo["url_o"]
         }
         photos.append(new_photo)
     html = "<ul class=\"image-gallery\">"
     for photo in photos:
-        html += f'<li class="gallery-li"><a href="{photo["url"]}"><img class="gallery-img" src="{photo["img"]}" /></a></li>'
+        html += f'<li class="gallery-li"><img @click="openModal(\'{photo["img"]}\')" class="gallery-img" src="{photo["thumb"]}" /></a></li>'
     html += "</ul>"
     return html
 

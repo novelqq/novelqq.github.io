@@ -2,69 +2,98 @@
 <html lang="en">
 
 <head>
-	<title>Ryan's World - Shuswap Shipwreck </title>
-	<meta charset="utf-8">
-	<meta property="og:title" content="Shuswap Shipwreck"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg"/>
-	<meta property="og:description" content="Ryan's World"/>
-	<meta name="twitter:site" content="My Website">
-	<meta name="twitter:title" content="Shuswap Shipwreck">
-	<meta name="twitter:description" content="Ryan's World">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image:src" content="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="favicon.jpg" type="image/jpg">
-	<link rel="stylesheet" type="text/css" href="../main.css">
+    <title>Ryan's World -
+        Shuswap Shipwreck
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="Shuswap Shipwreck" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="Shuswap Shipwreck">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
 <body>
-	<div class="container">
-		<div class="logo-small dark">
-			<pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
 |    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
 |   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
 |   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
 |    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
 |   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
 |___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
-		</div>
-		<div class="navbar dark">
-			<nav>
-				<a href="../index.html">Home</a>
-				<a href="../posts.html">Blog</a>
-				<a href="../highlights.html">Gallery</a>
-			</nav>
-		</div>
-		<div class="flex dark">
-			<div class="middle flex flexouter split">
-				<div id="posts">
-					<nav class="navbar"> 
-						<a href="Konkreet.html">&lt;&lt; Next</a>
-						<a href="Obsidian_Sentinel.html">Prev &gt;&gt;</a>
-					</nav>
-					<div class="flex light"><div class="post" id="Shuswap_Shipwreck"> <h2><a href="https://www.flickr.com/photos/fuzz-e/54299398455">Shuswap Shipwreck</a></h2>
-<p><img alt="Shuswap Shipwreck" src="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg" title="Shuswap Shipwreck" /></p>
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="Konkreet.html">&lt;&lt; Next</a>
+                        <a href="Obsidian_Sentinel.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="Shuswap_Shipwreck"> <h2><a href="https://www.flickr.com/photos/fuzz-e/54299398455">Shuswap Shipwreck</a></h2>
+<p><img alt="Shuswap Shipwreck" src="https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg" @click="openModal('https://live.staticflickr.com/65535/54299398455_9f05c89c66_k_d.jpg')" title="Shuswap Shipwreck" /></p>
 <p>Quick little build to make sure I got something out in January, lol. 2025 has been a little rough so far, had a really rough few weeks with various colds and sickness on top of a tiring move to a new town. I think everything is mostly settled now so I should be able to get into a rhythm doing all the things I said I would do this year. I wanted to do a little 2024 recap of stuff I read/watched/listened to in 2024 but the last month basically wiped my memory of it all so I'll save it for 2025. There will be time to scream into a void 11 months from now. </p> </div>
 </div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="Konkreet.html">&lt;&lt; Next</a>
+                        <a href="Obsidian_Sentinel.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
 
-					<nav class="navbar"> 
-						<a href="Konkreet.html">&lt;&lt; Next</a>
-						<a href="Obsidian_Sentinel.html">Prev &gt;&gt;</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-		<div class="flex flexouter dark">
-			<h4>Links</h4>
-			<div class="links">
-				<a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
-				<a href="https://github.com/novelqq">Github</a>
-				<a href="https://instagram.com/fuzze.builds/">Instagram</a>
-				<a href="https://x.com/smilingmuffin/">Twitter</a>
-			</div>
-		</div>
-	</div>
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

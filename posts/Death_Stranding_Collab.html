@@ -2,49 +2,52 @@
 <html lang="en">
 
 <head>
-	<title>Ryan's World - Death Stranding Collab </title>
-	<meta charset="utf-8">
-	<meta property="og:title" content="Death Stranding Collab"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://live.staticflickr.com/65535/53348367432_309221419c_c_d.jpg"/>
-	<meta property="og:description" content="Ryan's World"/>
-	<meta name="twitter:site" content="My Website">
-	<meta name="twitter:title" content="Death Stranding Collab">
-	<meta name="twitter:description" content="Ryan's World">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image:src" content="https://live.staticflickr.com/65535/53348367432_309221419c_c_d.jpg">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="favicon.jpg" type="image/jpg">
-	<link rel="stylesheet" type="text/css" href="../main.css">
+    <title>Ryan's World -
+        Death Stranding Collab
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="Death Stranding Collab" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://live.staticflickr.com/65535/53348367432_309221419c_c_d.jpg" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="Death Stranding Collab">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://live.staticflickr.com/65535/53348367432_309221419c_c_d.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
 <body>
-	<div class="container">
-		<div class="logo-small dark">
-			<pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
 |    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
 |   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
 |   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
 |    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
 |   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
 |___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
-		</div>
-		<div class="navbar dark">
-			<nav>
-				<a href="../index.html">Home</a>
-				<a href="../posts.html">Blog</a>
-				<a href="../highlights.html">Gallery</a>
-			</nav>
-		</div>
-		<div class="flex dark">
-			<div class="middle flex flexouter split">
-				<div id="posts">
-					<nav class="navbar"> 
-						<a href="Sol_Strider.html">&lt;&lt; Next</a>
-						<a href="Bio-Cup_2023_Recap.html">Prev &gt;&gt;</a>
-					</nav>
-					<div class="flex light"><div class="post" id="Death_Stranding_Collab"> <h2>Highways</h2>
-<p><img alt="Lego figure and motorcycle" src="https://live.staticflickr.com/65535/53348367432_8d5ca01357_k_d.jpg" title="Highways" />
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="Sol_Strider.html">&lt;&lt; Next</a>
+                        <a href="Bio-Cup_2023_Recap.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="Death_Stranding_Collab"> <h2>Highways</h2>
+<p><img alt="Lego figure and motorcycle" src="https://live.staticflickr.com/65535/53348367432_8d5ca01357_k_d.jpg" @click="openModal('https://live.staticflickr.com/65535/53348367432_8d5ca01357_k_d.jpg')" title="Highways" />
 I organized a collabaration with some friends inspired by the videogame "Death Stranding" by Hideo Kojima. I wanted to make a cafe racer motorcycle. It has working front and rear suspension.
 I've linked the rest of the builds below!</p>
 <p><a href="https://www.flickr.com/photos/lordoblivionthegreat/53348370512/" title="Death Stranding">Death Stranding</a>
@@ -54,24 +57,50 @@ I've linked the rest of the builds below!</p>
 <a href="https://www.flickr.com/photos/daniel_brick_son/53348384147" title="Decentralized by Nature">Decentralized by Nature</a>
 <a href="" title="https://www.flickr.com/photos/195287218@N05/53349256056/ &quot;Bones">Bones</a></p> </div>
 </div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="Sol_Strider.html">&lt;&lt; Next</a>
+                        <a href="Bio-Cup_2023_Recap.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
 
-					<nav class="navbar"> 
-						<a href="Sol_Strider.html">&lt;&lt; Next</a>
-						<a href="Bio-Cup_2023_Recap.html">Prev &gt;&gt;</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-		<div class="flex flexouter dark">
-			<h4>Links</h4>
-			<div class="links">
-				<a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
-				<a href="https://github.com/novelqq">Github</a>
-				<a href="https://instagram.com/fuzze.builds/">Instagram</a>
-				<a href="https://x.com/smilingmuffin/">Twitter</a>
-			</div>
-		</div>
-	</div>
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
