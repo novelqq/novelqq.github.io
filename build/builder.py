@@ -145,4 +145,4 @@ if __name__ == "__main__":
     write_blogs(blog_posts)
     recent_posts = recent_posts_html(blog_posts)
     write_index(recent_posts)
-    write_highlights(make_gallery())
+    # write_highlights(make_gallery())

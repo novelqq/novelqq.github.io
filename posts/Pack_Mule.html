@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ryan's World -
+        Pack Mule
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="Pack Mule" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://live.staticflickr.com/65535/54571911380_c06300f987_b_d.jpg" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="Pack Mule">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://live.staticflickr.com/65535/54571911380_c06300f987_b_d.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+|    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
+|   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
+|   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
+|    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
+|   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
+|___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="Ubel.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="Pack_Mule"> <h2><a href="https://www.flickr.com/gp/fuzz-e/89322W9G6J">Pack Mule</a></h2>
+<p><img alt="Pack Mule" src="../public/img/packmule/DSC00576.png" @click="openModal('../public/img/packmule/DSC00576.png')" /></p>
+<p>Inspired by Ghost in the Shell and 3D designs by <a href="https://x.com/aurora_machina">Andrei Kurylovich</a>. The propellors spin via a gear on the back, and the pegs on the legs allow it to pick up a cargo container that I forgot to take a picture of. I'd like to show both those functions off but I don't have a motor, stand, or time to do that right now. Already rushed these pictures so that I could share it before I leave tomorrow to travel for a whole month! Maybe I'll post a travel blog for that as well...</p>
+<p><img alt="Pack Mule Front Crop" src="../public/img/packmule/DSC00579crop.png" @click="openModal('../public/img/packmule/DSC00579crop.png')" />
+<img alt="Pack Mule Front" src="../public/img/packmule/DSC00579.png" @click="openModal('../public/img/packmule/DSC00579.png')" />
+<img alt="Pack Mule Left" src="../public/img/packmule/DSC00582.png" @click="openModal('../public/img/packmule/DSC00582.png')" /> 
+<img alt="Pack Mule Right" src="../public/img/packmule/DSC00583.png" @click="openModal('../public/img/packmule/DSC00583.png')" /></p> </div>
+</div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="Ubel.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
