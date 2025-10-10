@@ -260,6 +260,31 @@ section {
 
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.magnify-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    /* so clicks go to image */
+}
+
+.image-container:hover .magnify-icon {
+    opacity: 1;
+}
+
 .post a:link {
     color: var(--secondary-stronger);
 }

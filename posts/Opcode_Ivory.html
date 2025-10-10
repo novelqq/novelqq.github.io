@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ryan's World -
+        Opcode Ivory
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="Opcode Ivory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://live.staticflickr.com/…/TYPE_ASHI_cover_image.jpg" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="Opcode Ivory">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://live.staticflickr.com/…/TYPE_ASHI_cover_image.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+|    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
+|   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
+|   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
+|    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
+|   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
+|___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="TYPE_ASHI.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="Opcode_Ivory"> <h2><a href="https://www.flickr.com/photos/fuzz-e/">Opcode Ivory</a></h2>
+<h2><div class="image-container" @click="openModal('../public/img/ivory/main.png')">
+    <img alt="Main" src="../public/img/ivory/main.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></h2>
+<p>Remember those techwear cosplay photos of Japanese girls wearing gunpla headgear and gas masks and things like that? Some Patlabor Alphonse got in here as well. Started as a tablescrap with the ultra cursed wario arm tech in the hips but I was motivated to finish it because other people threatened to create more monstrosities with startling celerity. Otherwise I would've been a little hesitant to post this on my accounts for obvious reasons. Everything in the build is lego including the panties (Scala), but not the shirt, which is a non-lego doll garment that I bought from eBay many years ago. I'm sure there's a neat scala shirt that would have worked just as well but the grey monotones sort of callback those funny headgear cosplay photos where they would wear simple undergarments and calvin kleins lmao. I also color corrected the big mac at the tummy to match light nougat, in case anyone is wondering. I bought the unicorn castle just to get the light nougat 1x1 round bricks, which roughly doubled the total amount of light nougat bricks I own. </p>
+<p><div class="image-container" @click="openModal('../public/img/ivory/umbrella.png')">
+    <img alt="Holding Umbrella" src="../public/img/ivory/umbrella.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></p>
+<p><div class="image-container" @click="openModal('../public/img/ivory/front.png')">
+    <img alt="Front" src="../public/img/ivory/front.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></p>
+<p><div class="image-container" @click="openModal('../public/img/ivory/wario.png')">
+    <img alt="Wario" src="../public/img/ivory/wario.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></p>
+<p>Wario is very upset that his arms were taken from him to create something so libertine. He's been outfitted to exact his revenge.   </p> </div>
+</div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="TYPE_ASHI.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

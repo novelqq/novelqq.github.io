@@ -79,18 +79,23 @@ def write_highlights(gallery):
 
 
 def add_click_to_images(html_string):
+    # Regex to match <img ... src="..." ...>
     img_pattern = r'(<img[^>]+src=["\']([^"\']+)["\'][^>]*>)'
 
-    def modify_img_tag(match):
+    def wrap_img_tag(match):
         img_tag = match.group(1)
         src = match.group(2)
 
-        modified_img_tag = img_tag.replace(
-            f'src="{src}"', f'src="{src}" @click="openModal(\'{src}\')"')
+        # Wrap the img in a container div and add the magnify icon
+        wrapped = f'''
+<div class="image-container" @click="openModal('{src}')">
+    {img_tag}
+    <div class="magnify-icon">&#128269;</div>
+</div>'''.strip()
 
-        return modified_img_tag
+        return wrapped
 
-    modified_html = re.sub(img_pattern, modify_img_tag, html_string)
+    modified_html = re.sub(img_pattern, wrap_img_tag, html_string)
 
     return modified_html
 
