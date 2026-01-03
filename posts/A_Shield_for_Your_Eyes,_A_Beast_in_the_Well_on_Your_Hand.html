@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ryan's World -
+        A Shield for Your Eyes, A Beast in the Well on Your Hand
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="A Shield for Your Eyes, A Beast in the Well on Your Hand" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.rworld.live/public/img/shell/shell.png" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="A Shield for Your Eyes, A Beast in the Well on Your Hand">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://www.rworld.live/public/img/shell/shell.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+|    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
+|   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
+|   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
+|    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
+|   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
+|___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="Opcode_Ivory.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="A_Shield_for_Your_Eyes,_A_Beast_in_the_Well_on_Your_Hand"> <h2><a href="https://www.flickr.com/photos/fuzz-e/55021509496">A Shield for Your Eyes, A Beast in the Well on Your Hand</a></h2>
+<p><div class="image-container" @click="openModal('../public/img/shell/shell.png')">
+    <img alt="Main" src="../public/img/shell/shell.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div>
+<div class="image-container" @click="openModal('../public/img/shell/shell2.png')">
+    <img alt="Alt" src="../public/img/shell/shell2.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZQ6Sk8Aj-SQ?si=MyxiViCu48dpAiBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
+</div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="Opcode_Ivory.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
