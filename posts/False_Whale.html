@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ryan's World -
+        False Whale
+    </title>
+    <meta charset="utf-8">
+    <meta property="og:title" content="False Whale" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.rworld.live/public/img/false/false.png" />
+    <meta property="og:description" content="Ryan's World" />
+    <meta name="twitter:site" content="My Website">
+    <meta name="twitter:title" content="False Whale">
+    <meta name="twitter:description" content="Ryan's World">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://www.rworld.live/public/img/false/false.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="logo-small dark">
+            <pre> ______    __   __  _______  __    _  _______    _     _  _______  ______    ___      ______  
+|    _ |  |  | |  ||   _   ||  |  | ||       |  | | _ | ||       ||    _ |  |   |    |      | 
+|   | ||  |  |_|  ||  |_|  ||   |_| ||  _____|  | || || ||   _   ||   | ||  |   |    |  _    |
+|   |_||_ |       ||       ||       || |_____   |       ||  | |  ||   |_||_ |   |    | | |   |
+|    __  ||_     _||       ||  _    ||_____  |  |       ||  |_|  ||    __  ||   |___ | |_|   |
+|   |  | |  |   |  |   _   || | |   | _____| |  |   _   ||       ||   |  | ||       ||       |
+|___|  |_|  |___|  |__| |__||_|  |__||_______|  |__| |__||_______||___|  |_||_______||______|  </pre>
+        </div>
+        <div class="navbar dark">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Blog</a>
+                <a href="../highlights.html">Gallery</a>
+            </nav>
+        </div>
+        <div class="flex dark">
+            <div class="middle flex flexouter split">
+                <div id="posts">
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="2025_Media_Wrap-Up.html">Prev &gt;&gt;</a>
+                    </nav>
+                    <div class="flex light"><div class="post" id="False_Whale"> <p><a href="https://www.flickr.com/photos/fuzz-e/55068399962">False Whale</a>
+<div class="image-container" @click="openModal('../public/img/false/false.png')">
+    <img alt="Main" src="../public/img/false/false.png" />
+    <div class="magnify-icon">&#128269;</div>
+</div></p>
+<h2>Code for converting images to ascii:</h2>
+<p><code>
+import sys
+from PIL import Image
+import numpy as np
+import os</p>
+<p>ASCII_CHARS = "@%#*+=-:. "</p>
+<p>def resize_image(image, new_width=100):
+    width, height = image.size
+    aspect_ratio = height / width
+    new_height = int(aspect_ratio * new_width * 0.55)
+    return image.resize((new_width, new_height))</p>
+<p>def image_to_grayscale(image):
+    return image.convert("L")</p>
+<p>def enhance_dark_subject(image, threshold=150):
+    img_array = np.array(image)
+    img_array = np.where(img_array &lt; threshold, img_array, 255)
+    return Image.fromarray(img_array)</p>
+<p>def pixels_to_ascii(image):
+    pixels = np.array(image)
+    ascii_str = ""</p>
+<pre><code>for row in pixels:
+    for pixel in row:
+        index = int(pixel) * (len(ASCII_CHARS) - 1) // 255
+        ascii_str += ASCII_CHARS[index]
+    ascii_str += "\n"
+
+return ascii_str
+</code></pre>
+<p>def image_to_ascii(path, width=100):
+    image = Image.open(path)
+    image = resize_image(image, width)
+    image = image_to_grayscale(image)
+    image = enhance_dark_subject(image)
+    return pixels_to_ascii(image)</p>
+<p>if <strong>name</strong> == "<strong>main</strong>":
+    if len(sys.argv) &lt; 2:
+        print("Usage: python ascii.py <image_path> [width] [output.txt]")
+        sys.exit(1)</p>
+<pre><code>image_path = sys.argv[1]
+width = int(sys.argv[2]) if len(sys.argv) &gt; 2 else 120
+
+output_file = sys.argv[3] if len(sys.argv) &gt; 3 else "output.txt"
+
+ascii_art = image_to_ascii(image_path, width)
+
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write(ascii_art)
+
+print(f"ASCII art saved to: {os.path.abspath(output_file)}")
+</code></pre>
+<p></code></p> </div>
+</div>
+                    <!-- Modal for full image -->
+                    <div v-if="modalVisible" class="modal" @click="closeModal">
+                        <img :src="modalImage" alt="Full Image" class="modal-content" />
+                    </div>
+                    <nav class="navbar">
+                        <a href="../posts.html">&lt;&lt; Next</a>
+                        <a href="2025_Media_Wrap-Up.html">Prev &gt;&gt;</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flexouter dark">
+            <h4>Links</h4>
+            <div class="links">
+                <a href="https://www.flickr.com/photos/fuzz-e/">Flickr</a>
+                <a href="https://github.com/novelqq">Github</a>
+                <a href="https://instagram.com/fuzze.builds/">Instagram</a>
+                <a href="https://x.com/smilingmuffin/">Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vue.js app
+        new Vue({
+            el: '#app',
+            data: {
+                modalVisible: false,
+                modalImage: ''
+            },
+            methods: {
+                // Open the modal and set the image source
+                openModal(imageUrl) {
+                    this.modalImage = imageUrl;
+                    this.modalVisible = true;
+                },
+                // Close the modal
+                closeModal() {
+                    this.modalVisible = false;
+                    this.modalImage = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
