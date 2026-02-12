@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mysterious Envelope</title>
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding-top: 25vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <audio id="audio" muted></audio>
+    <a href="4dee.html">
+        <img id="letter" src="public/img/letterclosed.png">
+    </a>
+</body>
+<script>
+    const letter = document.getElementById("letter");
+
+    letter.addEventListener("mouseenter", function () {
+        letter.src = "public/img/letteropen.png";
+    });
+
+    letter.addEventListener("mouseleave", function () {
+        letter.src = "public/img/letterclosed.png";
+    });
+
+    const audio = document.getElementById("audio");
+    audio.src = "public/audio/wind.wav";
+    window.addEventListener("load", () => {
+        audio.play().then(() => {
+            audio.muted = false;
+        })
+    })
+</script>
+
+</html>

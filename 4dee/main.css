@@ -1,0 +1,175 @@
+html {
+    background-image: url("public/img/tile.png");
+    background-size: 100px;
+    background-blend-mode: luminosity;
+}
+
+@font-face {
+    font-family: 'plushie';
+    src: url('public/fonts/plushie.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: plushie;
+}
+
+/* Floating Player Box */
+.player {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    z-index: 1000;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: solid 1px;
+    background: #f00e80;
+    color: white;
+}
+
+.controls button:hover {
+    background: #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+li {
+    padding: 6px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+li:hover {
+    background: #ffe48f;
+}
+
+.active {
+    background: #ffe48e;
+    color: #f00e80;
+}
+
+.lyrics-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: #FFFFF8;
+    border-radius: 8px;
+    font-size: 13px;
+    max-height: 120px;
+    overflow-y: auto;
+    white-space: pre-line;
+    /* keeps line breaks */
+}
+
+.cd-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#cd {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    animation: spin 0.1s linear infinite;
+    animation-duration: 0.1s;
+    animation-play-state: paused;
+
+    transition: animation-duration 8s ease;
+}
+
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+main {
+    background-image: url(public/img/paper.jpg);
+    padding-top: 100px;
+    background-color: rgb(255, 255, 238);
+    width: 80%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.photo-stack {
+    position: relative;
+    width: 80vh;
+    /* adjust as needed */
+    height: 100vh;
+    margin: 50px auto;
+}
+
+p {
+    width: 400px;
+    padding-top: 870px;
+    padding-left: 60px;
+}
+
+.photo {
+    position: absolute;
+    transition: transform;
+}
+
+/* Bottom photo */
+.photo1 {
+    width: 80vh;
+    top: 20px;
+    left: 40px;
+    transform: rotate(2deg);
+    z-index: 1;
+}
+
+/* Top overlapping photo */
+.photo2 {
+    height: 60vh;
+    top: 500px;
+    transform: rotate(-2deg);
+    z-index: 2;
+    left: 40vh;
+}
+
+/* Optional hover lift effect */
+.photo:hover {
+    transform: scale(1.05);
+    z-index: 3;
+}

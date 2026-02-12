@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>For Dee &#x2661;</title>
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <main>
+        <div class="photo-stack">
+            <img src="public/img/vday1.png" class="photo photo1">
+            <img src="public/img/vday2.png" class="photo photo2">
+            <p>Sadie!!!! Thank you for being my friend. You are beautiful, compassionate, caring, funny, smart, you are
+                my
+                favourite human being in the whole world. You have such a perceptive consideration for those around you.
+                Thank you for spending time with me, sharing laughs, anxieties, your interests, and sharing interest in
+                mine. <br><br>
+
+                In the last year, maybe more, I've felt my happiness become tied up with yours. I want nothing else than
+                to
+                see you flourish, to be confident, to find your slice of joy that wipes away all the despair and anxiety
+                past and future. If I could be even a little part of your happiness... No matter what, I promise I'll
+                always
+                do my best to support you in whatever way you'll allow me. <br><br>
+
+                I wish I'd communicate a little better. I've closed up this part of me for so long, perhaps forever.
+                But
+                from now on, for you I will do better. I know there's a big huge ocean-spanning barrier looming over it
+                all... But there's no one else that I've felt this way with before. I really mean it!!!! Whatever
+                happens,
+                please know that I care about you. Thank you for being patient with me. I will patiently wait for you
+                too. I can still see you glaring me from atop the Witch's Castle. Guh...
+                <br><br>
+
+                With love,<br><br>
+
+                Ryan
+            </p>
+
+        </div>
+
+    </main>
+    <div class="player">
+        <audio id="audio"></audio>
+        <div class="cd-container">
+            <img id="cd" src="public/img/cd.png" alt="CD">
+        </div>
+        <div class="controls">
+            <button onclick="prevSong()">⏮ Prev</button>
+            <button onclick="togglePlay()"> &#9654; Play / Pause</button>
+            <button onclick="nextSong()">⏭ Next</button>
+        </div>
+
+        <ul id="playlist"></ul>
+        <div id="lyrics" class="lyrics-box"></div>
+    </div>
+    <script>
+        const songs = [{
+            title: "Song Without a Name (なまえのないうた) [Vocals]", file: "public/audio/track3.mp3", lyrics: `
+On the surface of the blue sea
+The nameless island
+Is an island that keeps waiting
+On the unfulfilled promise
+
+Tomorrow, when this rain stops
+We can be tied together
+The island keeps waiting
+On that unfulfilled promise
+
+Seagulls flew
+And composed a beautiful lie
+We vowed to each other that we’ll live together
+On the golden island
+
+To you, who keeps believing
+That tomorrow, when this rain stops
+We can be tied together
+I give everything of mine
+
+I give everything of mine
+                `},
+
+        {
+            title: "ear - Real Life", file: "public/audio/track1.wav", lyrics: `
+If I let you in
+Will we start again?
+I just can't believe
+You'd be my friend
+
+I'll bite my tongue
+Waited a ton
+Control myself
+And return to one
+Say all the time
+Even if I
+Controlled myself
+I love real life
+
+Three, four, five, four, four, three, five
+Five, three, four, five, four
+
+And return to one
+Say all the time
+Even if I
+Control myself
+I love real life
+                `},
+        {
+            title: "doefriends - I WANT TO LOVE AGAIN", file: "public/audio/track2.mp3", lyrics: `
+i never thought it could feel so real
+i'm starting to remember how to feel
+there's something i can't tell 
+i really hope it's going well
+
+when you don't have a single hope in a black abyss 
+you start to wonder if you ever really thought it existed 
+tastes so rotten i think i'm
+
+addicted 
+afflicted 
+confused 
+it's no use
+
+i know and you know 
+what the future holds
+bright prospects 
+with muted undertones
+
+and we both know
+what we think about 
+when we lay in bed 
+lying through our mouths 
+
+i wanna tell you everything about 
+i wanna. show everything i'd do 
+i wanna tell where it's hurts inside 
+i wanna hold you so close at night
+
+tell if you think i got a little bit too close 
+i just wanna tell you what i wish to disclose
+i wanna tell where it's hurts inside 
+i wanna hold you so close at night
+
+i wanna tell you what i like about you 
+i wanna tell you what i'm feeling's brand new
+i wanna take my life and fuck it up
+i just wanna take a chance on this new love
+i just wanna take a chance on this new love
+
+i want to love again 
+and never fall asleep and then
+forget all the little things 
+that make it all feel like a stupid dream
+and it all seems so simple now
+it all seems so simple now
+
+i want to love again 
+and never fall asleep and then
+forget all the little things 
+that make it all feel like a stupid dream
+and it all seems so simple now
+it all seems so simple now
+                `},
+        {
+            title: "Wylie Hopkins - It Was a Nice Dream", file: "public/audio/track4.mp3", lyrics: `
+Left in the dust
+Floating around
+Catching the light
+For a moment
+Sediment falls
+When the curtain’s drawn
+
+It was a nice dream
+It was a nice dream
+It was a nice dream
+
+Don’t let it fade
+I’m riding it down
+Hits like a train
+You know I’m leaving town
+So you get a say
+When the curtain’s drawn
+
+I got faith I’m gonna see it through
+When I get on track I want to be with you
+See shadows creeping in the corridor
+I woke up screaming in another world
+
+It was a nice dream
+It was a nice dream
+It was a nice dream
+
+Across the sea
+I’ll call you tonight
+I want you with me
+But you already know
+
+I got faith I’m gonna see it through
+When I get on track I’m gonna to be with you
+Two silhouettes in a fantasy
+I woke up with you sleeping next to me
+
+Was it a nice dream?
+Was it a nice dream?
+                `
+        }
+        ];
+
+        const audio = document.getElementById("audio");
+        const playlist = document.getElementById("playlist");
+        const lyricsBox = document.getElementById("lyrics");
+        let currentSong = 0;
+
+        function loadSong(index) {
+            audio.src = songs[index].file;
+            lyricsBox.textContent = songs[index].lyrics;
+            highlightSong();
+        }
+
+        function playSong(index) {
+            currentSong = index;
+            loadSong(currentSong);
+            audio.play();
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        function nextSong() {
+            currentSong = (currentSong + 1) % songs.length;
+            loadSong(currentSong);
+            audio.play();
+        }
+
+        function prevSong() {
+            currentSong = (currentSong - 1 + songs.length) % songs.length;
+            loadSong(currentSong);
+            audio.play();
+        }
+
+        function highlightSong() {
+            const items = document.querySelectorAll("#playlist li");
+            items.forEach((item, index) => {
+                item.classList.toggle("active", index === currentSong);
+            });
+        }
+
+        audio.addEventListener("ended", nextSong);
+
+        songs.forEach((song, index) => {
+            const li = document.createElement("li");
+            li.textContent = song.title;
+            li.onclick = () => playSong(index);
+            playlist.appendChild(li);
+        });
+
+        loadSong(currentSong);
+
+        const cd = document.getElementById("cd");
+
+        audio.addEventListener("play", () => {
+            cd.style.animationPlayState = "running";
+
+            setTimeout(() => {
+                cd.style.animationDuration = "1.2s";
+            }, 10);
+        });
+
+        audio.addEventListener("pause", slowdown);
+
+        audio.addEventListener("ended", slowdown);
+
+        function slowdown() {
+            cd.style.animationDuration = "4s";
+
+            setTimeout(() => {
+                cd.style.animationPlayState = "paused";
+            }, 800);
+        }
+    </script>
+
+</body>
+
+</html>
