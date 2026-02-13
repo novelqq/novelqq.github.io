@@ -15,7 +15,6 @@ body {
     font-family: plushie;
 }
 
-/* Floating Player Box */
 .player {
     position: fixed;
     top: 20px;
@@ -26,6 +25,14 @@ body {
     border: 1px solid;
     z-index: 1000;
 }
+
+@media only screen and (max-width: 800px) {
+    .player {
+        position: relative;
+    }
+
+}
+
 
 .controls {
     text-align: center;
@@ -79,7 +86,6 @@ li:hover {
     max-height: 120px;
     overflow-y: auto;
     white-space: pre-line;
-    /* keeps line breaks */
 }
 
 .cd-container {
@@ -114,35 +120,28 @@ li:hover {
 
 main {
     background-image: url(public/img/paper.jpg);
-    padding-top: 100px;
     background-color: rgb(255, 255, 238);
-    width: 80%;
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-}
-
-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin-left: 22%;
+    margin-right: 22%;
+    padding: 30px;
+    padding-bottom: 1vh;
 }
+
 
 
 .photo-stack {
     position: relative;
-    width: 80vh;
-    /* adjust as needed */
-    height: 100vh;
-    margin: 50px auto;
+    width: 80%;
+    height: 100%;
+    margin: 55px auto;
 }
 
 p {
-    width: 400px;
-    padding-top: 870px;
-    padding-left: 60px;
+    max-width: 30%;
+    padding-top: 55vh;
+    padding-left: 7vw;
 }
 
 .photo {
@@ -150,25 +149,21 @@ p {
     transition: transform;
 }
 
-/* Bottom photo */
 .photo1 {
-    width: 80vh;
-    top: 20px;
+    max-width: 40vw;
     left: 40px;
     transform: rotate(2deg);
     z-index: 1;
 }
 
-/* Top overlapping photo */
 .photo2 {
-    height: 60vh;
-    top: 500px;
+    padding-top: 20vw;
+    max-width: 20vw;
     transform: rotate(-2deg);
     z-index: 2;
-    left: 40vh;
+    left: 20vw;
 }
 
-/* Optional hover lift effect */
 .photo:hover {
     transform: scale(1.05);
     z-index: 3;
