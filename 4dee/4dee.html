@@ -10,6 +10,20 @@
 </head>
 
 <body>
+    <div class="player">
+        <audio id="audio"></audio>
+        <div class="cd-container">
+            <img id="cd" src="public/img/cd.png" alt="CD">
+        </div>
+        <div class="controls">
+            <button onclick="prevSong()">⏮ Prev</button>
+            <button onclick="togglePlay()"> &#9654; Play / Pause</button>
+            <button onclick="nextSong()">⏭ Next</button>
+        </div>
+
+        <ul id="playlist"></ul>
+        <div id="lyrics" class="lyrics-box"></div>
+    </div>
     <div class="screen-wrapper">
         <div class="screen">
             <main>
@@ -56,20 +70,7 @@
             </main>
         </div>
     </div>
-    <div class="player">
-        <audio id="audio"></audio>
-        <div class="cd-container">
-            <img id="cd" src="public/img/cd.png" alt="CD">
-        </div>
-        <div class="controls">
-            <button onclick="prevSong()">⏮ Prev</button>
-            <button onclick="togglePlay()"> &#9654; Play / Pause</button>
-            <button onclick="nextSong()">⏭ Next</button>
-        </div>
 
-        <ul id="playlist"></ul>
-        <div id="lyrics" class="lyrics-box"></div>
-    </div>
     <script>
         const songs = [{
             title: "Song Without a Name (なまえのないうた) [Vocals]", file: "public/audio/track3.mp3", lyrics: `

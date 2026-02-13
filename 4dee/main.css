@@ -26,14 +26,6 @@ body {
     z-index: 1000;
 }
 
-@media only screen and (max-width: 800px) {
-    .player {
-        position: relative;
-    }
-
-}
-
-
 .controls {
     text-align: center;
     margin-bottom: 10px;
@@ -126,7 +118,7 @@ main {
     margin-left: 22%;
     margin-right: 22%;
     padding: 30px;
-    padding-bottom: 1vh;
+    padding-bottom: 10px;
 }
 
 
@@ -139,32 +131,79 @@ main {
 }
 
 p {
-    max-width: 30%;
-    padding-top: 55vh;
-    padding-left: 7vw;
+    padding: 10px;
 }
 
 .photo {
-    position: absolute;
+    position: relative;
     transition: transform;
 }
 
 .photo1 {
-    max-width: 40vw;
-    left: 40px;
+    max-width: 50vw;
     transform: rotate(2deg);
     z-index: 1;
 }
 
 .photo2 {
-    padding-top: 20vw;
-    max-width: 20vw;
+    max-width: 40vw;
     transform: rotate(-2deg);
     z-index: 2;
-    left: 20vw;
 }
 
 .photo:hover {
     transform: scale(1.05);
     z-index: 3;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    main {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .photo-stack {
+        width: 100%;
+        margin: 20px auto;
+        height: auto;
+    }
+
+    .photo {
+        position: relative;
+        display: block;
+        max-width: 90%;
+        margin: 10px auto;
+        left: 0;
+        transform: none;
+    }
+
+    p {
+        max-width: 100%;
+        padding: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .player {
+        position: relative;
+        width: 90%;
+        margin: 20px auto;
+        left: 0;
+        top: 0;
+    }
+
+    #cd {
+        width: 200px;
+        height: 200px;
+    }
+
+    .lyrics-box {
+        max-height: 200px;
+    }
 }
